@@ -1,0 +1,22 @@
+"use client";
+import { createContext } from "react";
+
+export const GlobalContext = createContext<{
+  isMobile: boolean;
+}>({
+  isMobile: false,
+});
+
+export const GlobalProvider = ({
+  children,
+  isMobile,
+}: {
+  children: React.ReactNode;
+  isMobile: boolean;
+}) => {
+  return (
+    <GlobalContext.Provider value={{ isMobile }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
