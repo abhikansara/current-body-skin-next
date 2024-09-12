@@ -9,9 +9,11 @@ export const MobileContainer = styled.div`
 
 export const Container = styled.div`
   position: relative;
-  height: 38vw;
+  height: max-content;
+  padding-bottom: 20px;
   @media screen and (max-width: 1920px) {
-    max-height: 50vw;
+    height: max-content;
+    max-height: max-content;
   }
 `;
 
@@ -37,7 +39,7 @@ export const Lines = styled.img`
   position: absolute;
   right: 0;
   top: 0;
-  width: 60%;
+  max-height: 80%;
   @media screen and (max-width: 1920px) {
     width: 80%;
   }
@@ -56,13 +58,15 @@ export const Lines = styled.img`
 `;
 
 export const Mask = styled.img`
-  width: 38.5%;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
+  max-height: 100%;
+  width: auto;
   @media screen and (max-width: 1920px) {
     width: 48%;
+    max-height: auto;
   }
   @media screen and (max-width: 1440px) {
     width: 50%;
@@ -174,6 +178,9 @@ export const FeaturesContainer = styled.div`
   gap: 16px;
   margin-top: 36px;
   max-width: 65%;
+  img {
+    width: 35px;
+  }
   @media screen and (max-width: 1440px) {
     max-width: 50%;
   }
@@ -256,8 +263,6 @@ export const ImagesDiv = styled.div`
 `;
 
 export const FooterContainer = styled.div`
-  position: absolute;
-  bottom: -78px;
   display: flex;
   gap: 58px;
   padding-left: 140px;
@@ -274,9 +279,6 @@ export const FooterContainer = styled.div`
     display: flex;
     gap: 24px;
     align-items: center;
-  }
-  @media screen and (max-width: 1920px) {
-    position: static;
   }
   @media screen and (max-width: 992px) {
     font-size: 14px;

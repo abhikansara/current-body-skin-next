@@ -16,8 +16,8 @@ export default async function Home() {
   const isMobile = await isMobileDevice();
   return (
     <GlobalProvider isMobile={isMobile}>
-      {/* <Navbar /> */}
-      {/* <HeadLines /> */}
+      <Navbar />
+      <HeadLines />
       <Benefits />
       <VideoSection />
       <GetYoursToday />
