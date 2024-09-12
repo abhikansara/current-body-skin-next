@@ -33,4 +33,8 @@ export const SwiperWrapper = styled(Swiper)`
     max-width: 100%;
     width: 100%;
   }
+
+  iframe {
+    border-radius: 12px;
+  }
 `;

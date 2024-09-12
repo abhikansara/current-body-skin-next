@@ -9,23 +9,32 @@ import { SwiperWrapper } from "./style";
 
 const videos = [
   {
-    src: "https://www.youtube.com/shorts/AKtqv3vv9ww",
+    // src: "https://www.youtube.com/shorts/AKtqv3vv9ww",
+    src: "",
     caption: "Relax mommy, I'm using Kim & Kimmy diapers",
   },
   {
-    src: "https://www.youtube.com/shorts/AoAcGoMcDl8",
+    // src: "https://www.youtube.com/shorts/AoAcGoMcDl8",
+    src: "",
+
     caption: <a href="https://kim-kimmy.com">Kim-kimmy.com</a>,
   },
   {
-    src: "https://www.youtube.com/shorts/nQkSHNpwQyM",
+    // src: "https://www.youtube.com/shorts/nQkSHNpwQyM",
+    src: "",
+
     caption: "Thin and Incredibly soft",
   },
   {
-    src: "https://www.youtube.com/shorts/w86kbtpoEn0",
+    // src: "https://www.youtube.com/shorts/w86kbtpoEn0",
+    src: "",
+
     caption: "Perfect for sensitive skin 😊",
   },
   {
-    src: "https://www.youtube.com/shorts/llyqEMY90E8",
+    // src: "https://www.youtube.com/shorts/llyqEMY90E8",
+    src: "",
+
     caption: "12hrs leakproof protection",
   },
 ];

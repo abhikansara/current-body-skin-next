@@ -5,10 +5,8 @@ import { Swiper } from "swiper/react";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #f8f8f8;
   padding: 30px;
-  background: #100f0f;
-  justify-content: center;
-  position: relative;
 `;
 
 export const Header = styled.div`
@@ -17,21 +15,15 @@ export const Header = styled.div`
   align-items: center;
   font-size: 36px;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   text-transform: uppercase;
   text-align: center;
   font-style: italic;
+  margin-bottom: 24px;
 
   b {
     color: #ffc406;
   }
-`;
-
-export const Content = styled.div`
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
-  padding: 30px;
 `;
 
 export const Item = styled.div`
@@ -41,9 +33,18 @@ export const Item = styled.div`
   gap: 16px;
   background-color: #ffffff;
   padding: 20px 30px;
-  width: 300px;
-  max-width: 300px;
+  width: 390px;
+  max-width: 390px;
   align-items: center;
+  position: relative;
+  min-height: 470px;
+  /* margin: 30px; */
+`;
+
+export const EllipseImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  z-index: 1;
 `;
 
 export const Label = styled.div`
@@ -60,33 +61,23 @@ export const Para = styled.div`
   text-align: center;
 `;
 
+export const Content = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  place-items: center;
+
+  @media screen and (max-width: 1250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
 export const SwiperWrapper = styled(Swiper)`
+  width: 100%;
   .swiper-slide {
     display: flex;
     justify-content: center;
     max-width: 100%;
     width: 100%;
-  }
-`;
-
-export const BeeImage = styled(Image)`
-  position: absolute;
-  right: 272px;
-  top: -88px;
-  z-index: 1;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const CurveImage = styled(Image)`
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  z-index: 1;
-
-  @media screen and (max-width: 768px) {
-    display: none;
   }
 `;

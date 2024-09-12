@@ -12,17 +12,15 @@ import {
 import Card from "./Card";
 import HoneyImg from "@/assets/images/gamechanger/honey.svg";
 import RunningImg from "@/assets/images/gamechanger/running.svg";
-import HoneyImg1 from "@/assets/images/gamechanger/honey.svg";
 import RadianceImg from "@/assets/images/gamechanger/radiance.svg";
 import BeeImg from "@/assets/images/gamechanger/bee.png";
 import CurveLine from "@/assets/images/gamechanger/curveline.svg";
 import { useMediaQuery } from "react-responsive";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Image from "next/image";
 
 const GameChanger = () => {
   const isMobileView = useMediaQuery({ maxWidth: 1024 });

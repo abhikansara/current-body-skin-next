@@ -11,7 +11,7 @@ type CardProps = {
 const Card = ({ img, label, para }: CardProps) => {
   return (
     <Item>
-      <Image src={img} alt={"honey"} />
+      <Image src={img} alt={label} />
       <Label>{label}</Label>
       <Para>{para}</Para>
     </Item>
