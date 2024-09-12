@@ -9,6 +9,7 @@ import GetYoursToday from "@/components/GetYoursToday";
 import GameChanger from "@/components/GameChanger";
 import Ingredients from "@/components/Ingredients";
 import BladderBliss from "@/components/BladderBliss";
+import Reviews from "@/components/Reviews";
 
 export default async function Home() {
   const isMobile = await isMobileDevice();
@@ -22,6 +23,7 @@ export default async function Home() {
       <GameChanger />
       <Ingredients />
       <BladderBliss />
+      <Reviews />
     </GlobalProvider>
   );
 }
