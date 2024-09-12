@@ -6,6 +6,7 @@ import HeadLines from "@/components/HeadLines";
 import Benefits from "@/components/Benefits";
 import VideoSection from "@/components/VideoSection";
 import GetYoursToday from "@/components/GetYoursToday";
+import GameChanger from "@/components/GameChanger";
 
 export default async function Home() {
   const isMobile = await isMobileDevice();
@@ -16,6 +17,7 @@ export default async function Home() {
       <Benefits />
       <VideoSection />
       <GetYoursToday />
+      <GameChanger />
     </GlobalProvider>
   );
 }
