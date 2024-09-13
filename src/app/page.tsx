@@ -14,6 +14,7 @@ import GetGlow from "@/components/GetGlow";
 import About from "@/components/About";
 import Guarentee from "@/components/Guarentee";
 import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 export default async function Home() {
   const isMobile = await isMobileDevice();
@@ -32,6 +33,7 @@ export default async function Home() {
       <About />
       <Guarentee />
       <FAQ />
+      <Footer />
     </GlobalProvider>
   );
 }
