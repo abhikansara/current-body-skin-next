@@ -1,7 +1,13 @@
 "use client";
 
 import React from "react";
-import { Container, Content, Header, SwiperWrapper } from "./style";
+import {
+  Container,
+  Content,
+  Header,
+  MobileWrapper,
+  SwiperWrapper,
+} from "./style";
 import CardItem from "./CardItem";
 import BreadImg from "@/assets/images/ingredients/bread.png";
 import FruitsImg from "@/assets/images/ingredients/fruits.png";
@@ -15,6 +21,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import CardMobile from "./CardMobile";
 
 const Ingredients = () => {
   const isMobileView = useMediaQuery({ maxWidth: 860 });
@@ -54,33 +61,11 @@ const Ingredients = () => {
 
   const mobileView = () => {
     return (
-      <SwiperWrapper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
-        loop={true}
-        slidesPerView={1}
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-        }}
-      >
+      <MobileWrapper>
         {items?.map((i, ind) => (
-          <SwiperSlide key={ind}>
-            <CardItem img={i?.image} label={i?.label} para={i?.para} />
-          </SwiperSlide>
+          <CardMobile key={ind} img={i?.image} title={i?.label} />
         ))}
-      </SwiperWrapper>
+      </MobileWrapper>
     );
   };
 

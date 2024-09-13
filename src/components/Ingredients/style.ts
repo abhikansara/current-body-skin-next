@@ -24,6 +24,10 @@ export const Header = styled.div`
   b {
     color: #ffc406;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const Item = styled.div`
@@ -52,6 +56,7 @@ export const Label = styled.div`
   font-size: 22px;
   text-align: center;
   color: #000000;
+  font-style: italic;
 `;
 
 export const Para = styled.div`
@@ -80,4 +85,12 @@ export const SwiperWrapper = styled(Swiper)`
     max-width: 100%;
     width: 100%;
   }
+`;
+
+export const MobileWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 `;

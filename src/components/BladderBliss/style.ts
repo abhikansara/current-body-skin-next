@@ -20,6 +20,10 @@ export const Header = styled.div`
   text-align: center;
   margin-bottom: 24px;
   z-index: 2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const Content = styled.div`
