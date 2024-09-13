@@ -12,6 +12,7 @@ import BladderBliss from "@/components/BladderBliss";
 import Reviews from "@/components/Reviews";
 import GetGlow from "@/components/GetGlow";
 import About from "@/components/About";
+import Guarentee from "@/components/Guarentee";
 
 export default async function Home() {
   const isMobile = await isMobileDevice();
@@ -28,6 +29,7 @@ export default async function Home() {
       <Reviews />
       <GetGlow />
       <About />
+      <Guarentee />
     </GlobalProvider>
   );
 }
