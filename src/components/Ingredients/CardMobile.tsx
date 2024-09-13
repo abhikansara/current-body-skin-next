@@ -1,15 +1,38 @@
 import React from "react";
-import { Arrow, ImageWrapper, Label, Wrapper } from "./cardStyle";
-import Image from "next/image";
+import { Arrow, Container, ImageWrapper, Label, Wrapper } from "./cardStyle";
 import DownArrow from "@/assets/images/ingredients/down-arrow.svg";
 
-const CardMobile = ({ img, title }: { img: any; title: string }) => {
+const CardMobile = ({
+  img,
+  title,
+  desc,
+  handleActiveItem,
+  activeIndex,
+}: {
+  img: any;
+  title: string;
+  desc: string;
+  handleActiveItem: () => void;
+  activeIndex: boolean;
+}) => {
   return (
-    <Wrapper>
-      <ImageWrapper src={img} alt={title} />
-      <Label>{title}</Label>
-      <Arrow src={DownArrow} alt={title} />
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <ImageWrapper src={img} alt={title} />
+        <Label>{title}</Label>
+        <Arrow src={DownArrow} alt={title} onClick={handleActiveItem} />
+      </Wrapper>
+      {activeIndex && (
+        <div
+          style={{
+            fontSize: "14px",
+            paddingTop: "8px",
+          }}
+        >
+          {desc}
+        </div>
+      )}
+    </Container>
   );
 };
 

@@ -35,7 +35,7 @@ const Benefits = () => {
   const [selectedItem, setSelectedItem] = useState(0);
   const isMobileView = useMediaQuery({ maxWidth: 1024 });
 
-  const numberOfItems = 2;
+  const numberOfItems = 3;
 
   const items = [
     {
@@ -65,7 +65,7 @@ const Benefits = () => {
   ];
 
   const handleNext = () => {
-    if (selectedItem <= numberOfItems) {
+    if (selectedItem < numberOfItems) {
       setSelectedItem(selectedItem + numberOfItems);
     }
   };
@@ -115,8 +115,12 @@ const Benefits = () => {
                           src={i?.icon}
                           alt={"logo" + index}
                           className=""
+                          height={30}
+                          width={30}
                         />
-                        <span className="">{i?.label}</span>
+                        <span className="" style={{ fontSize: "12px" }}>
+                          {i?.label}
+                        </span>
                       </Item>
                       {items?.filter(
                         (i, ind) =>

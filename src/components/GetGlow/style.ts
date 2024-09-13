@@ -39,6 +39,19 @@ export const Card = styled.div`
   max-width: 200px;
   height: 235px;
   border-radius: 16px;
+
+  @media screen and (max-width: 768px) {
+    width: 350px;
+    max-width: 350px;
+    height: max-content;
+  }
+
+  img {
+    @media screen and (max-width: 768px) {
+      height: 300px;
+      width: 300px;
+    }
+  }
 `;
 
 export const Text = styled.div`

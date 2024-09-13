@@ -44,7 +44,6 @@ import useIsMobile from "@/hooks/useIsMobile";
 
 const HeadLines = () => {
   const isMobile = useIsMobile();
-  console.log({ isMobile });
   return (
     <Container>
       {isMobile ? (

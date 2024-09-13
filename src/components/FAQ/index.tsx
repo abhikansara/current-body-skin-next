@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionTitle,
@@ -12,56 +12,71 @@ import {
 } from "./style";
 import MinusIcon from "@/assets/images/faq/minus.svg";
 import PlusIcon from "@/assets/images/faq/plus.svg";
-import FooterLogo from "@/assets/images/faq/footerlogo.png";
 import Image from "next/image";
 
+const items = [
+  {
+    title: "Q: Melatonin - Is it my bedtime buddy?",
+    desc: "Most people only need one, but if you need, due to extra anxiety or overload, take two.",
+  },
+  {
+    title: "Q: I like things natural and safe. Is this the right blend for me?",
+    desc: "Most people only need one, but if you need, due to extra anxiety or overload, take two.",
+  },
+  {
+    title: "Q: Will I wake up ready to conquer the world?",
+    desc: "Most people only need one, but if you need, due to extra anxiety or overload, take two.",
+  },
+  {
+    title: "Q: What if the product and I don't click?",
+    desc: "Most people only need one, but if you need, due to extra anxiety or overload, take two.",
+  },
+  {
+    title: "Q: Special diets and me, can we all get along with this product?",
+    desc: "Most people only need one, but if you need, due to extra anxiety or overload, take two.",
+  },
+];
+
 const FAQ = () => {
+  const [activeIndex, setActiveIndex] = useState(
+    items?.map((i) => {
+      return {
+        isActive: false,
+      };
+    })
+  );
+
+  const handleActiveItem = (index: number) => {
+    setActiveIndex((prev) => {
+      return prev.map((i, iIndex) => {
+        if (iIndex === index) {
+          return {
+            ...i,
+            isActive: !i.isActive,
+          };
+        }
+        return i;
+      });
+    });
+  };
+
   return (
     <Container>
       <Title>Frequently Asked Questions</Title>
       <Content>
-        <Accordion>
-          <AccordionTitle>
-            <Image src={MinusIcon} alt="minus" />
-            <Text>Q: Melatonin - Is it my bedtime buddy?</Text>
-          </AccordionTitle>
-          <Desc>
-            Most people only need one, but if you need, due to extra anxiety or
-            overload, take two.
-          </Desc>
-        </Accordion>
-
-        <Accordion>
-          <AccordionTitle>
-            <Image src={PlusIcon} alt="plus" />
-            <Text>
-              Q: I like things natural and safe. Is this the right blend for me?
-            </Text>
-          </AccordionTitle>
-        </Accordion>
-
-        <Accordion>
-          <AccordionTitle>
-            <Image src={PlusIcon} alt="plus" />
-            <Text>Q: Will I wake up ready to conquer the world?</Text>
-          </AccordionTitle>
-        </Accordion>
-
-        <Accordion>
-          <AccordionTitle>
-            <Image src={PlusIcon} alt="plus" />
-            <Text>Q: What if the product and I don't click?</Text>
-          </AccordionTitle>
-        </Accordion>
-
-        <Accordion>
-          <AccordionTitle>
-            <Image src={PlusIcon} alt="plus" />
-            <Text>
-              Q: Special diets and me, can we all get along with this product?
-            </Text>
-          </AccordionTitle>
-        </Accordion>
+        {items.map((item, index) => (
+          <Accordion key={index}>
+            <AccordionTitle>
+              <Image
+                src={activeIndex[index]?.isActive ? MinusIcon : PlusIcon}
+                alt="plus"
+                onClick={() => handleActiveItem(index)}
+              />
+              <Text>{item.title}</Text>
+            </AccordionTitle>
+            {activeIndex[index]?.isActive && <Desc>{item.desc}</Desc>}
+          </Accordion>
+        ))}
       </Content>
     </Container>
   );

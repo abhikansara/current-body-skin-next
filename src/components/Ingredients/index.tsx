@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Content,
@@ -59,11 +59,40 @@ const Ingredients = () => {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(
+    items?.map((i) => {
+      return {
+        isActive: false,
+      };
+    })
+  );
+
+  const handleActiveItem = (index: number) => {
+    setActiveIndex((prev) => {
+      return prev.map((i, iIndex) => {
+        if (iIndex === index) {
+          return {
+            ...i,
+            isActive: !i.isActive,
+          };
+        }
+        return i;
+      });
+    });
+  };
+
   const mobileView = () => {
     return (
       <MobileWrapper>
         {items?.map((i, ind) => (
-          <CardMobile key={ind} img={i?.image} title={i?.label} />
+          <CardMobile
+            key={ind}
+            img={i?.image}
+            title={i?.label}
+            desc={i?.para}
+            handleActiveItem={() => handleActiveItem(ind)}
+            activeIndex={activeIndex[ind]?.isActive}
+          />
         ))}
       </MobileWrapper>
     );

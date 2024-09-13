@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   Container,
@@ -27,7 +27,47 @@ import HalfFlowerImg from "@/assets/images/about/half-flower.png";
 import FullFlowerImg from "@/assets/images/about/flower.png";
 import DownFlowerImg from "@/assets/images/about/downFlower.png";
 
+const items = [
+  {
+    title: "About the Dream Bliss",
+    desc: "So you know, we’ve always been the type to give more than we take always there for friends family, and even strangers. Helping people is what we do.",
+  },
+  {
+    title: "How Dream Bliss Came to",
+    desc: "So you know, we’ve always been the type to give more than we take always there for friends family, and even strangers. Helping people is what we do.",
+  },
+  {
+    title: "Falling Asleep Doesn't... Complicated",
+    desc: "So you know, we’ve always been the type to give more than we take always there for friends family, and even strangers. Helping people is what we do.",
+  },
+  {
+    title: "Combat Lack of Sleep and Stress",
+    desc: "So you know, we’ve always been the type to give more than we take always there for friends family, and even strangers. Helping people is what we do.",
+  },
+];
 const About = () => {
+  const [activeIndex, setActiveIndex] = useState(
+    items?.map((i) => {
+      return {
+        isActive: false,
+      };
+    })
+  );
+
+  const handleActiveItem = (index: number) => {
+    setActiveIndex((prev) => {
+      return prev.map((i, iIndex) => {
+        if (iIndex === index) {
+          return {
+            ...i,
+            isActive: !i.isActive,
+          };
+        }
+        return i;
+      });
+    });
+  };
+
   return (
     <Container>
       <PeachShadeImage src={PeachShade} alt="peachShade" />
@@ -48,38 +88,21 @@ const About = () => {
       </Header>
       <Content>
         <Info>
-          <Accordion>
-            <Title>
-              About the Dream Bliss
-              <Image src={UpArrowIcon} alt="upArrow" />
-            </Title>
-            <Para>
-              So you know, we’ve always been the type to give more than we take
-              always there for friends, family, and even strangers. Helping
-              people is what we do.
-            </Para>
-          </Accordion>
-
-          <Accordion>
-            <Title>
-              How Dream Bliss Came to
-              <Image src={DownArrowIcon} alt="upArrow" />
-            </Title>
-          </Accordion>
-
-          <Accordion>
-            <Title>
-              Falling Asleep Doesn't... Complicated
-              <Image src={DownArrowIcon} alt="upArrow" />
-            </Title>
-          </Accordion>
-
-          <Accordion>
-            <Title>
-              Combat Lack of Sleep and Stress
-              <Image src={DownArrowIcon} alt="upArrow" />
-            </Title>
-          </Accordion>
+          {items.map((item, index) => (
+            <Accordion key={index}>
+              <Title>
+                {item?.title}
+                <Image
+                  src={
+                    activeIndex[index]?.isActive ? UpArrowIcon : DownArrowIcon
+                  }
+                  alt="downArrow"
+                  onClick={() => handleActiveItem(index)}
+                />
+              </Title>
+              {activeIndex[index]?.isActive && <Para>{item?.desc}</Para>}
+            </Accordion>
+          ))}
         </Info>
         <Image src={BottleImg} alt="about" />
       </Content>

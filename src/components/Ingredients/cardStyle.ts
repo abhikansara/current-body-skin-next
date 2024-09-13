@@ -1,14 +1,19 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   display: flex;
-  gap: 20px;
+  flex-direction: column;
   padding: 16px;
   background-color: #ffffff;
   width: 340px;
   max-width: 340px;
   border-radius: 8px;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  gap: 20px;
 `;
 
 export const ImageWrapper = styled(Image)`
