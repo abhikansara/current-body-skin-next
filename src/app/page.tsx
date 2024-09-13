@@ -11,6 +11,7 @@ import Ingredients from "@/components/Ingredients";
 import BladderBliss from "@/components/BladderBliss";
 import Reviews from "@/components/Reviews";
 import GetGlow from "@/components/GetGlow";
+import About from "@/components/About";
 
 export default async function Home() {
   const isMobile = await isMobileDevice();
@@ -26,6 +27,7 @@ export default async function Home() {
       <BladderBliss />
       <Reviews />
       <GetGlow />
+      <About />
     </GlobalProvider>
   );
 }

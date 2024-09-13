@@ -29,10 +29,12 @@ import LeftArrowIcon from "@/assets/images/benefits/left-arrow.svg";
 import RightArrowIcon from "@/assets/images/benefits/right-arrow.svg";
 import Image from "next/image";
 import useIsMobile from "@/hooks/useIsMobile";
+import { useMediaQuery } from "react-responsive";
 
 const Benefits = () => {
   const [selectedItem, setSelectedItem] = useState(0);
-  const isMobile = useIsMobile();
+  const isMobileView = useMediaQuery({ maxWidth: 1024 });
+
   const numberOfItems = 2;
 
   const items = [
@@ -74,12 +76,10 @@ const Benefits = () => {
     }
   };
 
-  console.log({ isMobile });
-
   return (
     <Container>
       <HeaderWrap>
-        {!isMobile ? (
+        {!isMobileView ? (
           <Header>
             {items?.map((i, index) => {
               return (
