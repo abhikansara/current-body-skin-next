@@ -9,33 +9,20 @@ import { SwiperWrapper } from "./style";
 
 const videos = [
   {
-    // src: "https://www.youtube.com/shorts/AKtqv3vv9ww",
-    src: "",
+    src: "https://www.youtube.com/shorts/AKtqv3vv9ww",
     caption: "Relax mommy, I'm using Kim & Kimmy diapers",
   },
   {
-    // src: "https://www.youtube.com/shorts/AoAcGoMcDl8",
-    src: "",
-
+    src: "https://www.youtube.com/shorts/AoAcGoMcDl8",
     caption: <a href="https://kim-kimmy.com">Kim-kimmy.com</a>,
   },
   {
-    // src: "https://www.youtube.com/shorts/nQkSHNpwQyM",
-    src: "",
-
+    src: "https://www.youtube.com/shorts/nQkSHNpwQyM",
     caption: "Thin and Incredibly soft",
   },
   {
-    // src: "https://www.youtube.com/shorts/w86kbtpoEn0",
-    src: "",
-
+    src: "https://www.youtube.com/shorts/w86kbtpoEn0",
     caption: "Perfect for sensitive skin 😊",
-  },
-  {
-    // src: "https://www.youtube.com/shorts/llyqEMY90E8",
-    src: "",
-
-    caption: "12hrs leakproof protection",
   },
 ];
 const Video = () => {
@@ -45,9 +32,10 @@ const Video = () => {
       spaceBetween={"auto"}
       navigation
       pagination={{ clickable: true }}
-      autoplay={{ delay: 5000 }}
-      loop={true}
-      slidesPerView={3}
+      autoplay={{
+        delay: 0,
+      }}
+      slidesPerView={4}
       breakpoints={{
         0: {
           slidesPerView: 1,
@@ -62,11 +50,11 @@ const Video = () => {
           spaceBetween: 20,
         },
         1024: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 30,
         },
         1440: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 30,
         },
       }}
@@ -79,6 +67,7 @@ const Video = () => {
             height={500}
             playing={true}
             loop={true}
+            muted
           />
         </SwiperSlide>
       ))}

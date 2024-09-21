@@ -7,6 +7,26 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: #f8f8f8;
   padding: 30px;
+
+  .footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .get-start {
+    background: linear-gradient(270deg, #9dc80a 0%, #1f9f3b 101.38%);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 16px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
 `;
 
 export const Header = styled.div`

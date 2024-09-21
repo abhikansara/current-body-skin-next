@@ -15,8 +15,13 @@ import KidzImage from "@/assets/images/getyourstoday/kidz.png";
 import WarrantyIcon from "@/assets/images/getyourstoday/warranty.svg";
 import SupportIcon from "@/assets/images/getyourstoday/support.svg";
 import Image from "next/image";
+import OrderNowModal from "../OrderNowModal";
 
 const GetYoursToday = () => {
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const hideModal = () => setIsModalVisible(false);
+  const showModal = () => setIsModalVisible(true);
+
   return (
     <Container>
       <ImageWrapper>
@@ -44,7 +49,7 @@ const GetYoursToday = () => {
           to provide personalized support before, during, and after your
           purchase.
         </Para>
-        <GetTodayBtn>Get Yours Today!</GetTodayBtn>
+        <GetTodayBtn onClick={showModal}>Get Yours Today!</GetTodayBtn>
         <Footer>
           <Info>
             <Image src={WarrantyIcon} alt={"warranty"} />
@@ -56,6 +61,9 @@ const GetYoursToday = () => {
           </Info>
         </Footer>
       </Content>
+      {isModalVisible && (
+        <OrderNowModal isModalVisible={isModalVisible} hideModal={hideModal} />
+      )}
     </Container>
   );
 };

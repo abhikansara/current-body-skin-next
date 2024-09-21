@@ -41,9 +41,14 @@ import freeShipping from "@/assets/images/headlines/free-shipping.png";
 import ArrowRight from "../Icons/ArrowRight";
 import StarIcon from "../Icons/StarIcon";
 import useIsMobile from "@/hooks/useIsMobile";
+import OrderNowModal from "../OrderNowModal";
 
 const HeadLines = () => {
   const isMobile = useIsMobile();
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const hideModal = () => setIsModalVisible(false);
+  const showModal = () => setIsModalVisible(true);
+
   return (
     <Container>
       {isMobile ? (
@@ -71,7 +76,7 @@ const HeadLines = () => {
             <Lines src={line.src} />
             <Mask src={mask.src} />
           </Content>
-          <Button>
+          <Button onClick={showModal}>
             Rejuvenate MY Skin Now! <ArrowRight />
           </Button>
           <RatingsContainer>
@@ -158,7 +163,7 @@ const HeadLines = () => {
                 <ListItem>27% More Powerful Than Other LED Masks </ListItem>
               </div>
             </FeaturesContainer>
-            <Button>
+            <Button onClick={showModal}>
               Rejuvenate MY Skin Now! <ArrowRight />
             </Button>
             <MoneyBack>
@@ -197,6 +202,10 @@ const HeadLines = () => {
           <div>Free Shipping</div>
         </div>
       </FooterContainer>
+
+      {isModalVisible && (
+        <OrderNowModal isModalVisible={isModalVisible} hideModal={hideModal} />
+      )}
     </Container>
   );
 };

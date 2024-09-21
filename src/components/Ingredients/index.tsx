@@ -22,9 +22,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CardMobile from "./CardMobile";
+import { Button } from "antd";
+import OrderNowModal from "../OrderNowModal";
 
 const Ingredients = () => {
   const isMobileView = useMediaQuery({ maxWidth: 860 });
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const hideModal = () => setIsModalVisible(false);
+  const showModal = () => setIsModalVisible(true);
 
   const items = [
     {
@@ -118,6 +123,14 @@ const Ingredients = () => {
             />
           ))}
         </Content>
+      )}
+      <div className="footer-btn">
+        <Button className="get-start" onClick={showModal}>
+          Get Started Today
+        </Button>
+      </div>
+      {isModalVisible && (
+        <OrderNowModal isModalVisible={isModalVisible} hideModal={hideModal} />
       )}
     </Container>
   );

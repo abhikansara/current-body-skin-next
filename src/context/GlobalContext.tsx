@@ -1,4 +1,5 @@
 "use client";
+import OrderNow from "@/components/OrderNow";
 import { createContext } from "react";
 
 export const GlobalContext = createContext<{
@@ -16,6 +17,7 @@ export const GlobalProvider = ({
 }) => {
   return (
     <GlobalContext.Provider value={{ isMobile }}>
+      <OrderNow />
       {children}
     </GlobalContext.Provider>
   );
