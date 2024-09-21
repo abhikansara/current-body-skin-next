@@ -9,7 +9,8 @@ export const Container = styled.div<{ isMenuOpen: boolean }>`
     justify-content: space-between;
     padding: 16px 28px;
     img {
-      height: 24px;
+      height: 48px;
+      width: auto;
     }
     height: ${({ isMenuOpen }) => (isMenuOpen ? "320px" : "auto")};
   }

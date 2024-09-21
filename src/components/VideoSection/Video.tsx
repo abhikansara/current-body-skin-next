@@ -67,7 +67,6 @@ const Video = () => {
             width={300}
             height={500}
             playing={true}
-            loop={true}
             muted
           />
         </SwiperSlide>

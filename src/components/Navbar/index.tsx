@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/loveherbz-logo.jpeg";
 import { Button, Container, Link, Links } from "./style";
 import useIsMobile from "@/hooks/useIsMobile";
 import MenuIcon from "../Icons/MenuIcon";

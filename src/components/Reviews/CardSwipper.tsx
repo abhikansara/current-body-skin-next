@@ -11,7 +11,6 @@ const CardSwipper = ({ children }: { children: React.ReactNode }) => {
       modules={[Navigation, Pagination, Autoplay]}
       navigation
       pagination={{ clickable: true }}
-      loop={true}
       slidesPerView={3}
       breakpoints={{
         0: {
