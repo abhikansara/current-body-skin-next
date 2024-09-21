@@ -35,6 +35,7 @@ const Video = () => {
       autoplay={{
         delay: 0,
       }}
+      loop={false}
       slidesPerView={4}
       breakpoints={{
         0: {

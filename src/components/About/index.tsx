@@ -45,7 +45,7 @@ const items = [
     desc: "So you know, we’ve always been the type to give more than we take always there for friends family, and even strangers. Helping people is what we do.",
   },
 ];
-const About = () => {
+const About = ({ id }: { id?: string }) => {
   const [activeIndex, setActiveIndex] = useState(
     items?.map((i) => {
       return {
@@ -69,7 +69,7 @@ const About = () => {
   };
 
   return (
-    <Container>
+    <Container id={id}>
       <PeachShadeImage src={PeachShade} alt="peachShade" />
       <PurpleShadeImage src={PurpleShade} alt="purpleShade" />
       <HalfFlowerImage src={HalfFlowerImg} alt="halfFlower" />

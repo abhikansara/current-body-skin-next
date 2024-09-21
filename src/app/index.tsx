@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeadLines from "@/components/HeadLines";
 import Benefits from "@/components/Benefits";
@@ -18,23 +18,45 @@ import Footer from "@/components/Footer";
 import OrderNow from "@/components/OrderNow";
 
 const LandingPage = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  const handleScroll = () => {
+    const showComponent = document.getElementById("show-component");
+    const hideComponent = document.getElementById("hide-component");
+
+    if (showComponent && hideComponent) {
+      const { top: thirdTop } = showComponent.getBoundingClientRect();
+      const { bottom: secondLastBottom } =
+        hideComponent.getBoundingClientRect();
+
+      // Show button when the third component is in view and the second last component is not
+      setShowButton(thirdTop <= window.innerHeight && secondLastBottom > 0);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
       <Navbar />
       <HeadLines />
       <Benefits />
-      <VideoSection />
+      <VideoSection id="show-component" />
       <GetYoursToday />
       <GameChanger />
       <Ingredients />
       <BladderBliss />
       <Reviews />
       <GetGlow />
-      <About />
+      <About id="hide-component" />
       <Guarentee />
       <FAQ />
       <Footer />
-      <OrderNow />
+      {showButton && <OrderNow />}
     </div>
   );
 };

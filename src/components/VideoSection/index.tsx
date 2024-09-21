@@ -6,9 +6,9 @@ import ReelIcon from "@/assets/images/videoSection/reel.svg";
 import Image from "next/image";
 import Video from "./Video";
 
-const VideoSection = () => {
+const VideoSection = ({ id }: { id?: string }) => {
   return (
-    <Container>
+    <Container id={id}>
       <Header>
         <Image unoptimized src={ReelIcon} alt="reel" />
         Here’s What Our Happy Customers Think
