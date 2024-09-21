@@ -17,7 +17,6 @@ export const GlobalProvider = ({
 }) => {
   return (
     <GlobalContext.Provider value={{ isMobile }}>
-      <OrderNow />
       {children}
     </GlobalContext.Provider>
   );

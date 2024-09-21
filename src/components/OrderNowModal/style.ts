@@ -20,4 +20,5 @@ export const CustomButton = styled(Button)`
   gap: 24px;
   background-color: #b34bc5;
   border-radius: 18px;
+  cursor: pointer;
 `;

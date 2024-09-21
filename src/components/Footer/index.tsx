@@ -11,8 +11,10 @@ import {
 } from "./style";
 import Image from "next/image";
 import Logo from "@/assets/images/footer/footerlogo.png";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <Container>
       <Content>
@@ -21,12 +23,18 @@ const Footer = () => {
       <Labels>
         <RightLabel>
           <span>Copyright © 2022 Twin Palms Naturals</span>{" "}
-          <span>Privacy Policy</span>
+          <span onClick={() => router.push("/privacy-policy")}>
+            Privacy Policy
+          </span>
         </RightLabel>
         <LeftLabel>
-          <span>Cookies</span>
-          <span>Terms of Service</span>
-          <span>Refund policy</span>
+          <span onClick={() => router.push("/cookies")}>Cookies</span>
+          <span onClick={() => router.push("/terms-of-service")}>
+            Terms of Service
+          </span>
+          <span onClick={() => router.push("/refund-policy")}>
+            Refund policy
+          </span>
         </LeftLabel>
       </Labels>
     </Container>

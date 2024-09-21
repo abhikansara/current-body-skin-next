@@ -19,12 +19,14 @@ const OrderNowModal = ({
         onClose={hideModal}
         onCancel={hideModal}
       >
-        <CustomButton>
+        <CustomButton onClick={() => window.open("https://www.amazon.in")}>
           Buy on{" "}
           <Image src={AmazonIcon} alt="amazon" height={170} width={170} />
         </CustomButton>
-        <CustomButton>Buy now (10% OFF)</CustomButton>
-        <CustomButton>
+        <CustomButton onClick={() => window.open("https://www.flipkart.com")}>
+          Buy now (10% OFF)
+        </CustomButton>
+        <CustomButton onClick={() => window.open("https://www.flipkart.com")}>
           Buy on
           <Image src={FlipkartIcon} alt="amazon" height={170} width={170} />
         </CustomButton>
