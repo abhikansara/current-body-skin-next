@@ -32,6 +32,11 @@ export const SwiperWrapper = styled(Swiper)`
     justify-content: center;
     max-width: 100%;
     width: 100%;
+
+    video {
+      height: fit-content !important;
+      border-radius: 10px !important;
+    }
   }
 
   iframe {

@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 40px 0;
+
+  .cursor {
+    cursor: pointer;
+  }
 `;
 
 export const Content = styled.div`

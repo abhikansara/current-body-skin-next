@@ -22,17 +22,28 @@ const Footer = () => {
       </Content>
       <Labels>
         <RightLabel>
-          <span>Copyright © 2022 Twin Palms Naturals</span>{" "}
-          <span onClick={() => router.push("/privacy-policy")}>
+          <span className="cursor">Copyright © 2022 Twin Palms Naturals</span>{" "}
+          <span
+            className="cursor"
+            onClick={() => router.push("/privacy-policy")}
+          >
             Privacy Policy
           </span>
         </RightLabel>
         <LeftLabel>
-          <span onClick={() => router.push("/cookies")}>Cookies</span>
-          <span onClick={() => router.push("/terms-of-service")}>
+          <span className="cursor" onClick={() => router.push("/cookies")}>
+            Cookies
+          </span>
+          <span
+            className="cursor"
+            onClick={() => router.push("/terms-of-service")}
+          >
             Terms of Service
           </span>
-          <span onClick={() => router.push("/refund-policy")}>
+          <span
+            className="cursor"
+            onClick={() => router.push("/refund-policy")}
+          >
             Refund policy
           </span>
         </LeftLabel>

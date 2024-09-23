@@ -9,19 +9,19 @@ import { SwiperWrapper } from "./style";
 
 const videos = [
   {
-    src: "https://www.youtube.com/shorts/AKtqv3vv9ww",
+    src: "https://cdn4.fireworktv.com/medias/2022/7/14/1657792613-fyrivnmq/watermarked/540/10000000_555824985962160_1494333877945714038_n.mp4",
     caption: "Relax mommy, I'm using Kim & Kimmy diapers",
   },
   {
-    src: "https://www.youtube.com/shorts/AoAcGoMcDl8",
+    src: "https://cdn4.fireworktv.com/medias/2022/7/14/1657791396-pirfnaot/watermarked/540/10000000_468799037753186_3138776627433085089_n.mp4",
     caption: <a href="https://kim-kimmy.com">Kim-kimmy.com</a>,
   },
   {
-    src: "https://www.youtube.com/shorts/nQkSHNpwQyM",
+    src: "https://cdn4.fireworktv.com/medias/2022/7/14/1657791918-wjobaflc/watermarked/540/10000000_3169424163270133_4593080676021649237_n.mp4",
     caption: "Thin and Incredibly soft",
   },
   {
-    src: "https://www.youtube.com/shorts/w86kbtpoEn0",
+    src: "https://cdn4.fireworktv.com/medias/2022/7/14/1657792120-acznwigx/watermarked/540/10000000_1220842515067374_9156743976455283835_n.mp4",
     caption: "Perfect for sensitive skin 😊",
   },
 ];
